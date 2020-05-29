@@ -1,0 +1,38 @@
+<form #f="ngForm" class="mx-auto">
+    <div class="form-group">
+        <label for="">Name</label>
+        <input #name="ngModel" name="name" [(ngModel)]="shipping.name" type="text" class="form-control"
+            [class.error]="name.touched && name.invalid" placeholder="Your Full Name" required>
+        <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+            <div *ngIf="name.errors.required">Name is required.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Address Line 1</label>
+        <input #addressLine1="ngModel" name="addressLine1" [(ngModel)]="shipping.addressLine1" type="text"
+            class="form-control" [class.error]="addressLine1.touched && addressLine1.invalid"
+            placeholder="House / Flat No." required>
+        <div class="alert alert-danger" *ngIf="addressLine1.touched && addressLine1.invalid">
+            <div *ngIf="addressLine1.errors.required">Address Line 1 is required.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Address Line 2</label>
+        <input #addressLine2="ngModel" name="addressLine2" [(ngModel)]="shipping.addressLine2" type="text"
+            class="form-control" [class.error]="addressLine2.touched && addressLine2.invalid"
+            placeholder="Street Name / Area Name" required>
+        <div class="alert alert-danger" *ngIf="addressLine2.touched && addressLine2.invalid">
+            <div *ngIf="addressLine2.errors.required">Address Line 2 is required.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">City</label>
+        <input #city="ngModel" name="city" [(ngModel)]="shipping.city" type="text" class="form-control"
+            [class.error]="city.touched && city.invalid" placeholder="Your Current City" required>
+        <div class="alert alert-danger" *ngIf="city.touched && city.invalid">
+            <div *ngIf="city.errors.required">City is required.</div>
+        </div>
+    </div>
+    <button mat-raised-button [disabled]="f.invalid" (click)="placeOrder()" class="place-order">Place
+        Order</button>
+</form>

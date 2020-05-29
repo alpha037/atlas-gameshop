@@ -1,0 +1,59 @@
+<h1 class="font-weight-bold">Shopping Cart</h1>
+
+<div class="row col" *ngIf="cart$ | async as cart">
+    <p>
+        You have {{ cart.totalItemsCount }} items in your shopping cart.
+        <button mat-button *ngIf="cart.items.length" (click)="clearCart()">
+            Clear Shopping Cart
+        </button>
+    </p>
+
+    <table class="table table-sm text-white">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Product</th>
+                <th scope="col" class="text-center" style="width: 15rem;">
+                    Quantity
+                </th>
+                <th scope="col" class="text-right">
+                    Price
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cart.items">
+                <th scope="row">
+                    <div [style.backgroundImage]="'url(' + item.imageUrl + ')'" class="thumbnail">
+                    </div>
+                </th>
+                <td>
+                    {{ item.title }}
+                </td>
+                <td>
+                    <cart-product-quantity [product]="item" [shopping-cart]="cart">
+                    </cart-product-quantity>
+                </td>
+                <td class="text-right">
+                    {{ item.totalPrice |currency:'INR' }}
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th class="text-right font-weight-bold">
+                    {{ cart.totalPrice | currency:'INR'}}
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="actions">
+        <button mat-raised-button routerLink="/check-out" *ngIf="cart.items.length" class="checkout">
+            Check Out
+        </button>
+    </div>
+</div>

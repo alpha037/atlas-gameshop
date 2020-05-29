@@ -1,0 +1,74 @@
+table {
+  width: 90%;
+}
+
+.mat-column-title {
+  flex: 0 0 50%;
+}
+
+.mat-column-price {
+  flex: 0 0 10%;
+}
+
+
+.mat-column-edit {
+  flex: 0 0 20%;
+  text-align: center;
+}
+
+.mat-column-delete {
+  flex: 0 0 20%;
+  text-align: right;
+}
+
+
+button:focus,
+a:focus {
+  outline: none;
+}
+
+.search-label {
+  margin: 10px auto;
+  display: block;
+  width: 80%;
+  margin-top: 2rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.form-control:focus {
+  border-color: #7E57C2;
+  box-shadow: 0 0 0 0.2rem rgba(126, 87, 194, 0.8);
+}
+
+.add-game {
+  margin: 20px auto;
+  width: auto;
+  height: 4rem;
+  font-size: 1.8rem;
+  /* display: flex; */
+  /* padding: 5px 0; */
+}
+
+.fab {
+  margin-right: 20px;
+}
+
+mat-paginator {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.mat-elevation-z8 {
+  background-color: white;
+  margin-bottom: 35px;
+  overflow-y: auto;
+  height: 400px;
+}
+
+
+.dark>.sidenav-container>.mat-elevation-z8 {
+  background: black;
+}

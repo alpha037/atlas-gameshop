@@ -1,0 +1,16 @@
+<div class="row no-gutters">
+    <div class="col text-center">
+        <button mat-raised-button [matMenuTriggerFor]="menu">
+            {{ shoppingCart.getQuantity(product) }}
+        </button>
+    </div>
+    <mat-menu #menu="matMenu" yPosition="above">
+        <button mat-menu-item (click)="addToCart()">
+            Add
+        </button>
+        <button mat-menu-item (click)="removeFromCart()">
+            Remove
+        </button>
+    </mat-menu>
+
+</div>

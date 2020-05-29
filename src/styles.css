@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
+html,
+body {
+  min-height: 100vh;
+  height: auto;
+}
+
+body {
+  /* padding-top: 80px; */
+  /* background-color: #fbf9fa; */
+  overflow-x: hidden;
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
+.container {
+  padding-top: 80px;
+  width: 90vw;
+  min-height: 100vh;
+}
+
+
+#dropdown01 {
+  user-select: none;
+}
+
+.item-logout {
+  cursor: pointer;
+}
+
+
+button:focus {
+  outline: none;
+}
+
+.dark {
+  background-color: black;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-md-6.ml-auto.mr-auto {
+    margin-bottom: 30px;
+  }
+}

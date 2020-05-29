@@ -1,0 +1,29 @@
+@import "../node_modules/@angular/material/theming";
+
+@include mat-core();
+
+// $app-primary: mat-palette($mat-indigo, 600);
+// $app-primary: mat-palette($mat-deep-purple, 400);
+$app-primary: mat-palette($mat-deep-purple, 400);
+$app-accent: mat-palette($mat-lime, 400);
+// $app-warn: mat-palette($mat-deep-orange, 600);
+$app-warn: mat-palette($mat-red, 600);
+
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+@include angular-material-theme($app-theme);
+
+
+$alt-primary: mat-palette($mat-deep-purple, 400);
+$alt-accent: mat-palette($mat-lime, 400);
+$alt-warn: mat-palette($mat-deep-orange, 500);
+
+$alt-theme: mat-dark-theme($alt-primary, $alt-accent, $alt-warn);
+
+.dark {
+  @include angular-material-theme($alt-theme);
+
+  .mat-elevation-z8 {
+    background-color: black;
+  }
+}

@@ -1,0 +1,26 @@
+/* .display {
+  display: flex;
+  flex-direction: column;
+} */
+
+.items {
+  padding-top: 7px;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.add-item {
+  color: #c1d343;
+}
+
+.btn-block {
+  margin-bottom: -5px;
+}
+
+.plus {
+  margin-right: -7px;
+}
+
+/* @media only screen and (max-width: 600px) {
+  
+} */

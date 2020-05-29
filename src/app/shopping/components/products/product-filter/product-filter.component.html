@@ -1,0 +1,24 @@
+<div class="filter">
+    <mat-chip-list class="mat-chip" aria-label="Game Genre selection">
+        <mat-chip color="accent" class="font-weight-bold" selected>
+            {{ chipCategory }}
+        </mat-chip>
+    </mat-chip-list>
+    <!-- <button mat-raised-button color="primary" class="btn-menu" [matMenuTriggerFor]="categories"
+        (click)="clicked = !clicked"> Categories
+        <mat-icon *ngIf="!clicked">arrow_drop_down</mat-icon>
+        <mat-icon *ngIf="clicked">arrow_drop_up</mat-icon>
+    </button>
+    <mat-menu #categories="matMenu" xPosition="after" yPosition="below">
+        <div class="list-group">
+            <a mat-menu-item (click)="setChipCategory('All Categories')" class="list-group-item list-group-item-action"
+                routerLink="/">
+                All Categories
+            </a>
+            <a mat-menu-item (click)="setChipCategory(c.val.name)" *ngFor="let c of categories$ | async" routerLink="/"
+                [queryParams]="{ category: c.key}" class="list-group-item list-group-item-action">
+                {{ c.val.name }}
+            </a>
+        </div>
+    </mat-menu> -->
+</div>

@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col">
+        <product-filter></product-filter>
+    </div>
+</div>
+
+<div class="row">
+    <div class="row" *ngIf="cart$ | async as cart">
+        <ng-container *ngFor="let p of filteredProducts; let i = index">
+
+            <div class="col-lg-4 mx-auto">
+                <product-card [product]="p" [shopping-cart]="cart"></product-card>
+            </div>
+
+        </ng-container>
+    </div>
+
+</div>
+
+<!-- <product-filter [category]="category"></product-filter>
+
+<div class="row">
+
+    <div class="col-lg-2">
+        <product-filter [category]="category"></product-filter>
+    </div>
+
+    <div class="col-md-10">
+        <div class="row" *ngIf="cart$ | async as cart">
+            <ng-container *ngFor="let p of filteredProducts; let i = index">
+
+                <div class="col-md-6">
+                    <product-card [product]="p" [shopping-cart]="cart"></product-card>
+                </div>
+                <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
+
+            </ng-container>
+        </div>
+    </div>
+</div> -->

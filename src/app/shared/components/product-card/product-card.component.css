@@ -1,0 +1,41 @@
+.main-card {
+  margin: 20px auto;
+  width: 20rem;
+  background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-card:hover {
+  transform: scale(0.975, 0.975);
+}
+
+.main-card-img-top {
+  /* flex-grow: 1;
+  object-fit: fill;
+  height: 400px; */
+  /* width: 100%; */
+  height: 50vh;
+  object-fit: cover;
+}
+
+.main-card-title {
+  font-weight: bolder;
+  font-size: 20px;
+  color: whitesmoke;
+}
+
+.main-card-price {
+  color: whitesmoke;
+}
+
+/* .card-body {
+  flex-grow: 0;
+} */
+
+.main-card-footer {
+  padding: 0;
+}
+
+.card-footer a {
+  width: 100%;
+}

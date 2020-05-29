@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" routerLink="/">Atlas Games</a>
+    <button (click)="isMenuCollapsed = !isMenuCollapsed" class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/shopping-cart" routerLinkActive="active"
+                    (click)="isMenuCollapsed = true">
+                    Shopping Cart
+                    <span *ngIf="cart$ | async as cart" class="badge badge-info badge-pill">
+                        {{ cart.totalItemsCount }}
+                    </span>
+                </a>
+            </li>
+            <ng-template #anonymousUser>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login" routerLinkActive="active"
+                        (click)="isMenuCollapsed = true">Login</a>
+                </li>
+            </ng-template>
+
+
+            <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    {{ appUser.name }}
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu " aria-labelledby="dropdown01">
+                    <a class="dropdown-item" routerLink="/my/orders" (click)="isMenuCollapsed = true">My Orders</a>
+                    <ng-container *ngIf="appUser.isAdmin">
+                        <a class="dropdown-item" routerLink="/admin/orders" (click)="isMenuCollapsed = true">Manage
+                            Orders</a>
+                        <a class="dropdown-item" routerLink="/admin/products" (click)="isMenuCollapsed = true">Manage
+                            Products</a>
+                    </ng-container>
+                    <a class="dropdown-item item-logout" (click)="logout()">Log Out</a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</nav>

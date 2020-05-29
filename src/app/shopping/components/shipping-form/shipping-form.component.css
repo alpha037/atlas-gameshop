@@ -1,0 +1,15 @@
+.place-order {
+  background-color: #218838;
+  color: whitesmoke;
+  font-size: 22px;
+  height: 3rem;
+}
+
+.form-control:focus {
+  border-color: #c1d343;
+  box-shadow: 0 0 0 0.2rem rgba(193, 211, 67, 0.8);
+}
+
+.error {
+  border: 2px solid crimson;
+}

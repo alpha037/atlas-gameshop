@@ -1,0 +1,36 @@
+.filter {
+  /* display: flex; */
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.toolbar {
+  position: relative;
+  top: -30px;
+  left: -20px;
+  width: 102vw;
+}
+
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.list-group {
+  overflow-y: auto;
+}
+
+.btn-menu {
+  border-radius: 20px;
+  width: 10rem;
+  font-size: 20px;
+  /* margin-top: 20px;
+  margin-bottom: 20px; */
+}
+
+.btn-menu:focus {
+  outline: none;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}

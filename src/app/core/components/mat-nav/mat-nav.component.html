@@ -1,0 +1,113 @@
+<!-- <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" role="main">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+
+      <ng-template #anonymousUser>
+        <a mat-list-item routerLink="/login" (click)="drawer.toggle()">Login</a>
+      </ng-template>
+
+      <mat-list-item ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          {{ appUser.name }}
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu " aria-labelledby="dropdown01">
+          <a class="dropdown-item" routerLink="/my/orders" (click)="drawer.toggle()">My Orders</a>
+          <ng-container *ngIf="appUser.isAdmin">
+            <a class="dropdown-item" routerLink="/admin/orders" (click)="drawer.toggle()">Manage
+              Orders</a>
+            <a class="dropdown-item" routerLink="/admin/products" (click)="drawer.toggle()">Manage
+              Products</a>
+          </ng-container>
+          <a class="dropdown-item" (click)="logout();">Log Out</a>
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span routerLink="/" class="home">Atlas Games</span>
+
+      <span class="fill-remaining-space"></span>
+
+      <a routerLink="/shopping-cart">
+        <mat-icon color="accent" aria-hidden="false" aria-label="Shopping Cart">shopping_cart</mat-icon>
+        <span *ngIf="cart$ | async as cart" class="badge badge-info badge-pill">
+          {{ cart.totalItemsCount }}
+        </span>
+      </a>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<div [class.dark]="toggleDark">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer mode="over" class="sidenav mat-elevation-z8" fixedInViewport="true" role="main">
+      <mat-toolbar class="text-white">Atlas Games</mat-toolbar>
+      <mat-nav-list>
+
+        <ng-template #anonymousUser>
+          <a class="text-white" mat-list-item routerLink="/login" (click)="drawer.toggle()">Login</a>
+        </ng-template>
+
+        <mat-list-item *ngIf="appUser; else anonymousUser">
+          <span [matMenuTriggerFor]="menu" class="text-white">
+            {{ appUser.name }}
+          </span>
+
+          <mat-menu #menu="matMenu" yPosition="below">
+            <button mat-menu-item routerLink="/my/orders" (click)="drawer.toggle()">My Orders</button>
+            <ng-container *ngIf="appUser.isAdmin">
+              <button mat-menu-item routerLink="/admin/orders" (click)="drawer.toggle()">Manage
+                Orders</button>
+              <button mat-menu-item routerLink="/admin/products" (click)="drawer.toggle()">Manage
+                Products</button>
+            </ng-container>
+            <button mat-menu-item (click)="logout();">Log Out</button>
+          </mat-menu>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="mat-elevation-z8">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <button mat-button routerLink="/">
+          <mat-icon class="materials-icon-custom">
+            games
+          </mat-icon>
+          <span class="xbox-logo"><img src="../../../../assets/img/xbox.svg"></span>
+        </button>
+
+        <span class="fill-remaining-space"></span>
+
+        <!-- <button mat-icon-button (click)="openDialog()">
+          <span *ngIf="toggleDark" class="sun-logo"><img src="../../../../assets/img/sun.svg"></span>
+          <span *ngIf="!toggleDark" class="moon-logo"><img src="../../../../assets/img/moon.svg"></span>
+        </button> -->
+
+        <button mat-button class="icon-button-filter" (click)="openBottomSheet()">
+          <mat-icon>filter_list</mat-icon>
+          Filter
+        </button>
+
+        <button mat-icon-button routerLink="/shopping-cart" class="icon-button-cart">
+          <mat-icon>shopping_cart</mat-icon>
+          <span *ngIf="cart$ | async as cart" class="badge badge-warning badge-pill">
+            {{ cart.totalItemsCount }}
+          </span>
+        </button>
+
+      </mat-toolbar>
+
+      <ng-content class="main-body"></ng-content>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

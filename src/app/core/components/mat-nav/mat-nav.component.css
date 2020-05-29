@@ -1,0 +1,81 @@
+.sidenav-container {
+  height: 100%;
+  background: #222021;
+  color: whitesmoke;
+}
+
+
+.dark>.sidenav-container {
+  background: #222021;
+}
+
+.sidenav {
+  width: 200px;
+  overflow-x: hidden;
+  background: black;
+  color: white;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  /* overflow: hidden; */
+}
+
+.mat-toolbar.mat-primary {
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+}
+
+.home {
+  cursor: pointer;
+  justify-content: center;
+}
+
+.home:focus {
+  outline: none;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.icon {
+  margin-bottom: -30px;
+}
+
+.material-icons-custom {
+  padding-bottom: 4px;
+}
+
+.sun-logo img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  padding-bottom: 3px;
+}
+
+.moon-logo img {
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  padding-bottom: 3px;
+}
+
+.xbox-logo img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+.icon-button-filter {
+  margin-right: 20px;
+}
+
+.icon-button-cart {
+  padding-right: 15px;
+}
+
+/* .main-body {
+  background: linear-gradient(to right, rgb(41, 128, 185), rgb(109, 213, 250), rgb(255, 255, 255));
+} */

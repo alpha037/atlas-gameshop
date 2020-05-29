@@ -1,0 +1,49 @@
+<!-- <div *ngIf="product.title || product.price || product.category || product.imageUrl" class="card">
+    <img *ngIf="product.imageUrl" [src]="product.imageUrl" class="card-img-top" alt="{{ product.title }}">
+    <div class="card-body">
+        <h5 class="card-title">
+            {{ product.title }}
+        </h5>
+        <p class="card-text">
+            {{ product.price | currency:'INR'}}
+        </p>
+    </div>
+    <div *ngIf="showActions && shoppingCart" class="card-footer">
+        <button mat-raised-button color="primary" *ngIf="shoppingCart.getQuantity(product) === 0; else updatedQuantity"
+            (click)="addToCart()" class="btn-block">
+            Add to Cart
+        </button>
+
+        <ng-template #updatedQuantity>
+            <product-quantity [shopping-cart]="shoppingCart" [product]="product">
+            </product-quantity>
+        </ng-template>
+    </div>
+</div> -->
+
+<mat-card *ngIf="product.title || product.price || product.category || product.imageUrl"
+    class="main-card mat-elevation-z10">
+    <img mat-card-image *ngIf="product.imageUrl" [src]="product.imageUrl" class="main-card-img-top"
+        alt="{{ product.title }}">
+    <div class="card-body">
+        <mat-card-title class="main-card-title">
+            {{ product.title }}
+        </mat-card-title>
+        <mat-card-content>
+            <p class="main-card-price">
+                {{ product.price | currency:'INR'}}
+            </p>
+        </mat-card-content>
+    </div>
+    <mat-card-actions *ngIf="showActions && shoppingCart" class="main-card-footer">
+        <button mat-raised-button color="primary" *ngIf="shoppingCart.getQuantity(product) === 0; else updatedQuantity"
+            (click)="addToCart()" class="btn-block">
+            Add to Cart
+        </button>
+
+        <ng-template #updatedQuantity>
+            <product-quantity [shopping-cart]="shoppingCart" [product]="product">
+            </product-quantity>
+        </ng-template>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,8 @@
+<mat-nav-list>
+    <a mat-list-item routerLink="/">
+        All Categories
+    </a>
+    <a mat-list-item *ngFor="let c of categories$ | async" routerLink="/" [queryParams]="{ category: c.key}">
+        {{ c.val.name }}
+    </a>
+</mat-nav-list>
