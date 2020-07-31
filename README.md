@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 # AtlasGames
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
